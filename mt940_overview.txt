@@ -1,0 +1,12 @@
+:20: Transaction Reference (REF123456789).
+:25: Account Number (DE12345678901234567890).
+:28C: Statement Number (001/001, sequence 001 of 001).
+:60F: Opening Balance (Date: C230101 [2023-01-01], Currency: EUR, Amount: €12,345.67).
+:61: Transaction Line 1 (D = Debit, C = Credit):
+    2301010101: Date (2023-01-01), Entry Date (01-01).
+    D1000,00: Debit of €1,000.00.
+    NTRF: Transaction Type (Transfer).
+    NONREF: No Reference.
+:86: Narrative Line (Additional details like /EREF [End-to-End Reference], /CNAME [Counterparty Name], /REMI [Remittance Info]).
+:62F: Closing Balance (Date: C230101, Amount: €11,845.67).
+:64: Available Balance (Same as closing balance here).

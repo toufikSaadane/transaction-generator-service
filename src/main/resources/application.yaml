@@ -1,0 +1,13 @@
+server:
+  port: 3001
+
+spring:
+  kafka:
+    bootstrap-servers: localhost:9092
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+
+mt940:
+  topic: "transaction_generator"
+  output-dir: output
