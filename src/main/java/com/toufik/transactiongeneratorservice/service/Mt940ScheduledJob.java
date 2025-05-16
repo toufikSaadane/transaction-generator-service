@@ -7,6 +7,7 @@ import com.toufik.transactiongeneratorservice.service.transactionReference.Mt940
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
+
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -22,12 +23,12 @@ public class Mt940ScheduledJob {
         this.transactionProducer = transactionProducer;
     }
 
-    @Scheduled(fixedRate = 200)
+    @Scheduled(fixedRate = 100)
     public void generateMt940File() {
 
         transactionProducer.sendTransaction("Message from Mt940ScheduledJob");
         try {
-           Mt940Data data = Mt940Data.builder()
+            Mt940Data data = Mt940Data.builder()
                     .transactionReference(Mt940Field20Generator.generateField20())
                     .accountNumber(IbanGeneratorByCountry.generateRandomIban())
                     .statementNumber("00001/001")
@@ -45,10 +46,10 @@ public class Mt940ScheduledJob {
             String timestamp = fileTimestampFormat.format(new Date());
             String fileName = timestamp + "_" + data.getAccountNumber() + ".sta";
             Mt940Generator.writeToFile(content, fileName);
-           log.info("MT940 file generated: " + fileName);
+            log.info("MT940 file generated: {}", fileName);
             transactionProducer.sendTransaction(IbanGeneratorByCountry.generateRandomIban());
         } catch (IOException e) {
-            log.error("Error generating file: " + e.getMessage());
+            log.error("Error generating file: {}", e.getMessage());
         }
     }
 }
