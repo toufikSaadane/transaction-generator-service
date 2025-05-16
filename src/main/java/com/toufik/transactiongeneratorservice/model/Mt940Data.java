@@ -1,10 +1,12 @@
 package com.toufik.transactiongeneratorservice.model;
 
+import lombok.Builder;
 import lombok.Data;
 
 import java.util.Date;
 
 @Data
+@Builder
 public class Mt940Data {
     private String transactionReference;
     private String accountNumber;

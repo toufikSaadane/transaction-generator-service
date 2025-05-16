@@ -22,24 +22,25 @@ public class Mt940ScheduledJob {
         this.transactionProducer = transactionProducer;
     }
 
-    @Scheduled(fixedRate = 2000)
+    @Scheduled(fixedRate = 200)
     public void generateMt940File() {
 
         transactionProducer.sendTransaction("Message from Mt940ScheduledJob");
         try {
-            Mt940Data data = new Mt940Data();
-            data.setTransactionReference(Mt940Field20Generator.generateField20());
-            data.setAccountNumber(IbanGeneratorByCountry.generateRandomIban());
-            data.setStatementNumber("00001/001");
-            data.setOpeningBalance("C231025EUR1000,00");
-            data.setValueDate(new Date());
-            data.setEntryDate(new Date());
-            data.setDebitCredit("D");
-            data.setAmount("150,00");
-            data.setClosingBalance("C231025EUR850,00");
-            data.setEref("INVOICE-12345");
-            data.setMerchantName("MERCHANT XYZ");
-            data.setRemittanceInfo("PAYMENT FOR SERVICES");
+           Mt940Data data = Mt940Data.builder()
+                    .transactionReference(Mt940Field20Generator.generateField20())
+                    .accountNumber(IbanGeneratorByCountry.generateRandomIban())
+                    .statementNumber("00001/001")
+                    .openingBalance("C231025EUR1000,00")
+                    .valueDate(new Date())
+                    .entryDate(new Date())
+                    .debitCredit("D")
+                    .amount("150,00")
+                    .closingBalance("C231025EUR850,00")
+                    .eref("INVOICE-12345")
+                    .merchantName("MERCHANT XYZ")
+                    .remittanceInfo("PAYMENT FOR SERVICES")
+                    .build();
             String content = Mt940Generator.generateMt940Content(data);
             String timestamp = fileTimestampFormat.format(new Date());
             String fileName = timestamp + "_" + data.getAccountNumber() + ".sta";
