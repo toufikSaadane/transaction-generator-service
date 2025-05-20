@@ -1,10 +1,12 @@
 package com.toufik.transactiongeneratorservice.service.transactionReference;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.util.Random;
 
 @Service
+@Slf4j
 public class Mt940Field20Generator {
 
     private static final Random RANDOM = new Random();
@@ -17,6 +19,7 @@ public class Mt940Field20Generator {
      */
     public static String generateField20() {
         String randomPart = generateRandomAlphanumeric(9);
+        log.info("Generated random transaction reference: {}", randomPart);
         return "REF" + randomPart;
     }
 

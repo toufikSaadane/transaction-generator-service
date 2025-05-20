@@ -1,13 +1,14 @@
 package com.toufik.transactiongeneratorservice.service;
 
 import com.toufik.transactiongeneratorservice.model.Mt940Data;
+import lombok.extern.slf4j.Slf4j;
 
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-
+@Slf4j
 public class Mt940Generator {
     private static final SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("yyMMdd");
     private static final SimpleDateFormat TIMESTAMP_FORMAT = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss");
@@ -46,21 +47,19 @@ public class Mt940Generator {
     }
 
     public static void writeToFile(String content, String filename) throws IOException {
-        // Define the directory path
         String directoryPath = "src/main/resources/mt940_files";
-
-        // Create the directory if it doesn't exist
         File directory = new File(directoryPath);
         if (!directory.exists()) {
+            log.info("Creating directory: {}", directoryPath);
             directory.mkdirs();
         }
-
-        // Create the full file path
         File file = new File(directory, filename);
-
-        // Write the content to the file
         try (FileWriter writer = new FileWriter(file)) {
             writer.write(content);
+            log.info("File written to: {}", file.getAbsolutePath());
+        }catch (IOException e){
+            log.error("Error writing to file: {}", e.getMessage());
+            throw e;
         }
     }
 }

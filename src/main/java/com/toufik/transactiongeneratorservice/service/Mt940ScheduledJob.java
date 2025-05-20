@@ -25,8 +25,6 @@ public class Mt940ScheduledJob {
 
     @Scheduled(fixedRate = 100)
     public void generateMt940File() {
-
-        transactionProducer.sendTransaction("Message from Mt940ScheduledJob");
         try {
             Mt940Data data = Mt940Data.builder()
                     .transactionReference(Mt940Field20Generator.generateField20())
