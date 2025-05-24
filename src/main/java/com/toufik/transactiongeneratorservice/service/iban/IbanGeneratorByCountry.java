@@ -20,11 +20,8 @@ public class IbanGeneratorByCountry {
      */
     public static String generateIban(EUCountryCode country) {
         int length = country.getIbanLength();
-        // Country code (2-digits) from enum
         String countryCode = country.getIbanCountryCode();
-        // Two check digits
         String checkDigits = String.format("%02d", RANDOM.nextInt(100));
-        // BBAN: remainder of the IBAN length
         int bbanLength = length - 4;
         String bban = generateRandomAlphanumeric(bbanLength);
         return countryCode + checkDigits + bban;

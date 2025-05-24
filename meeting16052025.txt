@@ -1,0 +1,5 @@
+- add readme
+- criteria to detect corrupt transactions.
+- Invalid files
+- system design ****
+- add PBI's

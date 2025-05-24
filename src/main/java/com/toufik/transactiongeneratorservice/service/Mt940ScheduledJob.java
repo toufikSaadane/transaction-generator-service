@@ -23,7 +23,7 @@ public class Mt940ScheduledJob {
         this.transactionProducer = transactionProducer;
     }
 
-    @Scheduled(fixedRate = 100)
+    @Scheduled(fixedRate = 1000)
     public void generateMt940File() {
         try {
             Mt940Data data = Mt940Data.builder()
