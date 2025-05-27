@@ -1,0 +1,29 @@
+| Country          | IBAN Example Format              | Length | Country Code |
+| ---------------- | -------------------------------- | ------ | ------------ |
+| Austria          | AT12 3456 7890 1234 5678         | 20     | AT           |
+| Belgium          | BE12 3456 7890 12                | 16     | BE           |
+| Bulgaria         | BG12 ABCD 3456 78 90 12          | 22     | BG           |
+| Croatia          | HR12 3456 7890 1234 567          | 21     | HR           |
+| Cyprus           | CY12 3456 7890 ABCD EFGH         | 28     | CY           |
+| Czech Republic   | CZ12 3456 7890 1234 5678         | 24     | CZ           |
+| Denmark          | DK12 3456 7890 12                | 18     | DK           |
+| Estonia          | EE12 3456 7890 1234 56           | 20     | EE           |
+| Finland          | FI12 3456 7890 1234 5            | 18     | FI           |
+| France           | FR12 3456 7890 ABCD EFGH 12      | 27     | FR           |
+| Germany          | DE12 3456 7890 1234 5678         | 22     | DE           |
+| Greece           | GR12 3456 7890 1234 5678 90      | 27     | GR           |
+| Hungary          | HU12 3456 7890 1234 5678 90      | 28     | HU           |
+| Ireland          | IE12 ABCD 3456 78 90 12          | 22     | IE           |
+| Italy            | IT12 A123 4567 8901 2345 6789    | 27     | IT           |
+| Latvia           | LV12 ABCD 3456 7890 1234         | 21     | LV           |
+| Lithuania        | LT12 3456 7890 1234              | 20     | LT           |
+| Luxembourg       | LU12 3456 7890 1234              | 20     | LU           |
+| Malta            | MT12 ABCD 3456 7890 1234 5678 90 | 31     | MT           |
+| Netherlands      | NL12 ABCD 3456 7890 12           | 18     | NL           |
+| Poland           | PL12 3456 7890 1234 5678 9012    | 28     | PL           |
+| Portugal         | PT12 3456 7890 1234 5678 901     | 25     | PT           |
+| Romania          | RO12 ABCD 3456 7890 1234 56      | 24     | RO           |
+| Slovakia         | SK12 3456 7890 1234 5678 90      | 24     | SK           |
+| Slovenia         | SI12 3456 7890 1234 56           | 19     | SI           |
+| Spain            | ES12 3456 7890 1234 5678 9012    | 24     | ES           |
+| Sweden           | SE12 3456 7890 1234 5678 9012    | 24     | SE           |

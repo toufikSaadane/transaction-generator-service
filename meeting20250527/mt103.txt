@@ -1,0 +1,17 @@
+|   Field    | Description                                        |
+|:----------:|:-------------------------------------------------- |
+| :20:       | Transaction Reference Number                       |
+| :23B:      | Bank Operation Code (e.g., CRED = credit transfer) |
+| :32A:      | Value Date, Currency, Amount (YYMMDD)              |
+| :33B:      | Currency, Original Ordered Amount                  |
+| :50K:      | Ordering Customer (party initiating payment)       |
+| :52A:      | Ordering Institution                               |
+| :53A:      | Sender’s Correspondent                             |
+| :54A:      | Receiver’s Correspondent                           |
+| :56A:      | Intermediary Institution                           |
+| :57A:      | Account with Institution (beneficiary bank)        |
+| :59:       | Beneficiary Customer                               |
+| :70:       | Remittance Information                             |
+| :71A:      | Details of Charges (`SHA`, `OUR`, or `BEN`)        |
+| :72:       | Sender to Receiver Information                     |
+| :77B:      | Regulatory Reporting / Additional Instructions     |

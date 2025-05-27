@@ -8,6 +8,6 @@ spring:
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: org.apache.kafka.common.serialization.StringSerializer
 
-mt940:
+mt103:
   topic: "transaction_generator"
   output-dir: output
