@@ -35,3 +35,5 @@ Edit `src/main/resources/application.yaml` to set:
 
 # Run the service
 ./gradlew bootRun
+
+/opt/homebrew/opt/kafka/bin/kafka-console-consumer --topic transaction_generator --bootstrap-server localhost:9092

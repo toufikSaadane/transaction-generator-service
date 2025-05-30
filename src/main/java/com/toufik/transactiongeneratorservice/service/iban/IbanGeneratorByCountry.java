@@ -1,5 +1,6 @@
 package com.toufik.transactiongeneratorservice.service.iban;
 
+import com.toufik.transactiongeneratorservice.model.IbanAndCountry;
 import com.toufik.transactiongeneratorservice.util.EUCountryCode;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -27,16 +28,11 @@ public class IbanGeneratorByCountry {
         return countryCode + checkDigits + bban;
     }
 
-    /**
-     * Randomly selects an EU country and generates its IBAN.
-     *
-     * @return A randomly generated IBAN.
-     */
-    public static String generateRandomIban() {
+    public static IbanAndCountry generateRandomIbanAndCountry() {
         EUCountryCode[] countries = EUCountryCode.values();
         EUCountryCode randomCountry = countries[RANDOM.nextInt(countries.length)];
-        log.info("Generated random IBAN for country: {}", randomCountry);
-        return generateIban(randomCountry);
+        String iban = generateIban(randomCountry);
+        return new IbanAndCountry(iban, randomCountry);
     }
 
     private static String generateRandomAlphanumeric(int length) {

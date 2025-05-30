@@ -54,7 +54,7 @@ class IbanGeneratorByCountryTest {
 
     @Test
     void randomIbanProducesValidCountryCodeAndCorrectLength() {
-        String randomIban = IbanGeneratorByCountry.generateRandomIban();
+        String randomIban = IbanGeneratorByCountry.generateRandomIbanAndCountry().getIban();
         Assertions.assertNotNull(randomIban);
         String countryCode = randomIban.substring(0, 2);
         EUCountryCode matchedCountry = null;

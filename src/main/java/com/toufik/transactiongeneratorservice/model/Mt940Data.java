@@ -7,7 +7,7 @@ import java.util.Date;
 
 @Data
 @Builder
-public class MT103Data {
+public class Mt940Data {
     private String transactionReference;
     private String accountNumber;
     private String statementNumber;

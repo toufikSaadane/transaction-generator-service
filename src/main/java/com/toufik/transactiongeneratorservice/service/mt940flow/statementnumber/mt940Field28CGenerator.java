@@ -1,4 +1,4 @@
-package com.toufik.transactiongeneratorservice.service.statementnumber;
+package com.toufik.transactiongeneratorservice.service.mt940flow.statementnumber;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -7,7 +7,7 @@ import java.util.Random;
 
 @Service
 @Slf4j
-public class MT103Field28CGenerator {
+public class mt940Field28CGenerator {
 
     private static final Random RANDOM = new Random();
 

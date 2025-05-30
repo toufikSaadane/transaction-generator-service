@@ -5,9 +5,9 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 
 @Component
-@ConfigurationProperties(prefix = "mt103")
+@ConfigurationProperties(prefix = "mt940")
 @Data
-public class MT103Properties {
+public class mt940Properties {
     private String topic;
     private String outputDir;
 }

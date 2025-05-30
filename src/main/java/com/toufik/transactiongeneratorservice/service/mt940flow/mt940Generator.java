@@ -1,6 +1,6 @@
-package com.toufik.transactiongeneratorservice.service;
+package com.toufik.transactiongeneratorservice.service.mt940flow;
 
-import com.toufik.transactiongeneratorservice.model.MT103Data;
+import com.toufik.transactiongeneratorservice.model.Mt940Data;
 import lombok.extern.slf4j.Slf4j;
 
 import java.io.File;
@@ -8,12 +8,13 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+
 @Slf4j
-public class MT103Generator {
+public class mt940Generator {
     private static final SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("yyMMdd");
     private static final SimpleDateFormat TIMESTAMP_FORMAT = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss");
 
-    public static String generateMT103Content(MT103Data data) {
+    public static String generatemt940Content(Mt940Data data) {
         StringBuilder sb = new StringBuilder();
 
         appendField(sb, "20", data.getTransactionReference());
@@ -47,7 +48,7 @@ public class MT103Generator {
     }
 
     public static void writeToFile(String content, String filename) throws IOException {
-        String directoryPath = "src/main/resources/MT103_files";
+        String directoryPath = "src/main/resources/mt940_files";
         File directory = new File(directoryPath);
         if (!directory.exists()) {
             log.info("Creating directory: {}", directoryPath);
